@@ -104,7 +104,7 @@ plt.show()
 
 ###  Step 6: Region of Interest (ROI)
 
-```
+
 height, width = thresh.shape
 
 roi_vertices = np.array([[
@@ -128,7 +128,7 @@ plt.show()
 
 ### Step 7: Edge Detection (Canny)
 
-```
+
 edges = cv2.Canny(roi_masked, 50, 150)
 
 plt.figure(figsize=(6, 6))
@@ -141,7 +141,7 @@ plt.show()
 
 ###  Step 8: Gaussian Blur
 
-```
+
 smoothed = cv2.GaussianBlur(edges, (5, 5), 0)
 
 plt.figure(figsize=(6, 6))
@@ -154,7 +154,7 @@ plt.show()
 
 ###  Step 9: Hough Transform
 
-```
+
 # Detect lines using Hough Transform
 
 lines = cv2.HoughLinesP(
@@ -185,7 +185,7 @@ plt.show()
 
 ### Step 10: Lane Detection Logic
 
-```
+
 
 final_output = cv2.addWeighted(image, 0.8, line_image, 1.0, 0.0)
 final_output_rgb = cv2.cvtColor(final_output, cv2.COLOR_BGR2RGB)
@@ -195,7 +195,7 @@ plt.imshow(final_output_rgb)
 plt.title("Final Lane Detection Output")
 plt.axis("off")
 plt.show()
----
+```
 
 ##  Expected Output
 
